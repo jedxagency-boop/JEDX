@@ -14,7 +14,7 @@ Web estática de JEDX (branding y diseño web), publicada en Cloudflare Pages de
 - Framework preset: **None**
 - Build command: *(vacío)*
 - Build output directory: **/**
-- Binding D1: variable `DB` → base `jedx-reclamos`
+- Binding D1: variable `DB` → base `jedx-reclamos` (ya configurado en `wrangler.toml`)
 - Variables opcionales: `RESEND_API_KEY` (secret), `MAIL_FROM`
 
 Cada cambio que se sube a `main` se publica solo.

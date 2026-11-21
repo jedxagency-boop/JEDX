@@ -1,0 +1,10 @@
+# Configuración de Cloudflare Pages para la web de JEDX
+name = "jedx"
+pages_build_output_dir = "."
+compatibility_date = "2026-11-01"
+
+# Base de datos del Libro de Reclamaciones
+[[d1_databases]]
+binding = "DB"
+database_name = "jedx-reclamos"
+database_id = "895146d6-0abf-4e66-b338-9c5a8ae4e568"
