@@ -39,7 +39,7 @@ export async function onRequestPost({ request, env }) {
     const filas = Object.keys(LBL).filter(k => limpio[k]).map(k => `<tr><td style="padding:6px 12px;color:#555;vertical-align:top">${esc(LBL[k])}</td><td style="padding:6px 12px;white-space:pre-wrap">${esc(limpio[k])}</td></tr>`).join('');
     const html = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#0D0E11">
 <h2 style="margin:0 0 4px">Hoja de reclamación N.° ${numero}</h2><p style="margin:0 0 12px">Fecha: ${esc(fecha)}</p>
-<p style="margin:0 0 12px">Proveedor: Edwin Chirinos Diaz (nombre comercial: JEDX) · RUC 10721502886<br>Domicilio fiscal: Jr. Volcán Coropuna Mz. D13 Lt. 2, Chorrillos, Lima 15057 · ${JEDX_MAIL}</p>
+<p style="margin:0 0 12px">Proveedor: JEDX · Lima, Perú · ${JEDX_MAIL}</p>
 <table style="border-collapse:collapse;border:1px solid #ddd">${filas}</table>
 <p style="margin:16px 0 0">Responderemos por escrito en un plazo máximo de 15 días hábiles improrrogables (fecha límite aproximada: ${esc(limite)}).</p>
 <p style="color:#666;font-size:12px">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</p></div>`;

@@ -25,9 +25,8 @@
   <div class="hoja-head">
     <div><b>Hoja de reclamación N.°</b><span id="h-num">Se asigna al enviar</span></div>
     <div><b>Fecha</b><span id="h-fecha">Se llena sola al enviar</span></div>
-    <div><b>Proveedor</b>Edwin Chirinos Diaz (nombre comercial: JEDX)</div>
-    <div><b>RUC</b>10721502886</div>
-    <div class="full"><b>Domicilio fiscal</b>Jr. Volcán Coropuna Mz. D13 Lt. 2, Chorrillos, Lima 15057</div>
+    <div><b>Proveedor</b>JEDX</div>
+    <div><b>Ubicación</b>Lima, Perú · atención 100 % en línea</div>
     <div><b>Correo</b>jedx.agency@gmail.com</div>
   </div>
 </div>
@@ -114,7 +113,7 @@
 </main>
 <footer>
   <div class="row">
-    <span>© 2026 JEDX · Edwin Chirinos Diaz · RUC 10721502886</span>
+    <span>© 2026 JEDX · Lima, Perú</span>
     <nav aria-label="Legal"><a href="terminos.html">Términos y condiciones</a><a href="terminos.html#datos">Privacidad</a><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a><a href="https://wa.me/51967226136" target="_blank" rel="noopener">WhatsApp</a></nav>
   </div>
 </footer>
@@ -128,7 +127,7 @@
   var LBL=[['nombre','Nombres y apellidos'],['tipo_doc','Tipo de documento'],['num_doc','N.° de documento'],['domicilio','Domicilio'],['telefono','Teléfono'],['correo','Correo'],['apod_nombre','Padre, madre o apoderado'],['apod_doc','Documento del apoderado'],['servicio','Servicio contratado'],['monto','Monto reclamado (S/)'],['comprobante','N.° de comprobante'],['desc_servicio','Descripción del servicio'],['tipo','Tipo'],['detalle','Detalle'],['pedido','Pedido'],['respuesta','Respuesta por']];
   function datos(){var d={};new FormData(f).forEach(function(v,k){d[k]=typeof v==='string'?v.trim():v;});d.menor=menor.checked;d.veridico=!!f.veridico.checked;d.datos=!!f.datos.checked;return d;}
   function copiaHTML(d){return '<div class="tbl"><table><tbody>'+LBL.filter(function(p){return d[p[0]];}).map(function(p){return '<tr><th style="width:38%">'+esc(p[1])+'</th><td style="white-space:pre-wrap">'+esc(d[p[0]])+'</td></tr>';}).join('')+'</tbody></table></div>';}
-  function copiaTXT(n,fe,d){return 'HOJA DE RECLAMACIÓN N.° '+n+'\nFecha: '+fe+'\nProveedor: Edwin Chirinos Diaz (JEDX) · RUC 10721502886\n\n'+LBL.filter(function(p){return d[p[0]];}).map(function(p){return p[1]+': '+d[p[0]];}).join('\n');}
+  function copiaTXT(n,fe,d){return 'HOJA DE RECLAMACIÓN N.° '+n+'\nFecha: '+fe+'\nProveedor: JEDX · Lima, Perú\n\n'+LBL.filter(function(p){return d[p[0]];}).map(function(p){return p[1]+': '+d[p[0]];}).join('\n');}
   function mostrar(n,fe,d,msg){
     document.getElementById('h-num').textContent=n;document.getElementById('h-fecha').textContent=fe;
     document.getElementById('r-num').textContent=n;document.getElementById('r-msg').textContent=msg;
