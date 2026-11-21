@@ -9,12 +9,12 @@ Web estática de JEDX (branding y diseño web), publicada en Cloudflare Pages de
 - `schema.sql` — tabla de la base D1 `jedx-reclamos`
 - `LEEME-RECLAMOS.md` — cómo activar el Libro de Reclamaciones
 
-## Configuración en Cloudflare Pages
+## Publicación en Cloudflare (Workers con archivos estáticos)
 
-- Framework preset: **None**
-- Build command: *(vacío)*
-- Build output directory: **/**
-- Binding D1: variable `DB` → base `jedx-reclamos` (ya configurado en `wrangler.toml`)
-- Variables opcionales: `RESEND_API_KEY` (secret), `MAIL_FROM`
+- Proyecto `jedx` conectado a este repositorio, comando de despliegue `npx wrangler deploy`
+- `wrangler.toml`: sirve los archivos estáticos y enlaza la base D1 `jedx-reclamos` como `DB`
+- `worker.js`: atiende `/api/reclamo` (Libro de Reclamaciones) y entrega el resto de la web
+- `.assetsignore`: archivos que no se publican (código del servidor, documentación)
+- Variables opcionales del proyecto: `RESEND_API_KEY` (secret), `MAIL_FROM`
 
 Cada cambio que se sube a `main` se publica solo.

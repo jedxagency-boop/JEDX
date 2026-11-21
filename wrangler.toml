@@ -1,7 +1,11 @@
-# Configuración de Cloudflare Pages para la web de JEDX
+# Configuración de Cloudflare (Workers con archivos estáticos) para la web de JEDX
 name = "jedx"
-pages_build_output_dir = "."
+main = "worker.js"
 compatibility_date = "2026-11-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
 
 # Base de datos del Libro de Reclamaciones
 [[d1_databases]]
