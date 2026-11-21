@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Libro de Reclamaciones | JEDX</title>
+<meta name="description" content="Libro de Reclamaciones virtual de JEDX: registra un reclamo o una queja.">
+<link rel="canonical" href="https://jedx.studio/libro-de-reclamaciones.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#F2F2EF">
+<link rel="stylesheet" href="assets/css/legal.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="index.html" aria-label="JEDX, volver al inicio" style="display:flex;align-items:center;gap:8px"><svg width="36" height="36" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><defs><linearGradient id="lgL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E7490"/><stop offset="1" stop-color="#9B3DFF"/></linearGradient></defs><g fill="none" stroke="url(#lgL)" stroke-width="16" stroke-linecap="round"><path d="M128 32 V118 A44 44 0 0 1 40 118"/><path d="M128 62 H154 L170 46"/><path d="M128 98 H168"/><path d="M62 160 L52 176"/><path d="M24 98 A78 78 0 0 1 72 26" stroke-width="10"/><path d="M178 112 A78 78 0 0 1 150 160" stroke-width="10"/></g><g fill="#F2F2EF" stroke="url(#lgL)" stroke-width="7"><circle cx="174" cy="42" r="9"/><circle cx="172" cy="98" r="9"/><circle cx="50" cy="180" r="9"/></g></svg><img src="assets/img/jedx-wordmark.png" alt="JEDX" width="66" height="21" style="display:block;height:21px;width:auto"></a>
+  <a class="back" href="index.html">← Volver al inicio</a>
+</header>
+<main>
+<p class="kicker">Atención al cliente</p>
+<h1>Libro de Reclamaciones</h1>
+<p class="lead">Conforme a lo establecido en el Código de Protección y Defensa del Consumidor, JEDX cuenta con un Libro de Reclamaciones virtual a tu disposición.</p>
+
+<div class="card" id="cabecera">
+  <div class="hoja-head">
+    <div><b>Hoja de reclamación N.°</b><span id="h-num">Se asigna al enviar</span></div>
+    <div><b>Fecha</b><span id="h-fecha">Se llena sola al enviar</span></div>
+    <div><b>Proveedor</b>Edwin Chirinos Diaz (nombre comercial: JEDX)</div>
+    <div><b>RUC</b>10721502886</div>
+    <div class="full"><b>Domicilio fiscal</b>Jr. Volcán Coropuna Mz. D13 Lt. 2, Chorrillos, Lima 15057</div>
+    <div><b>Correo</b>jedx.agency@gmail.com</div>
+  </div>
+</div>
+
+<form id="reclamo" novalidate>
+<fieldset>
+  <legend>1. Tus datos</legend>
+  <div class="grid">
+    <label class="f full">Nombres y apellidos<input type="text" name="nombre" required autocomplete="name" maxlength="120"></label>
+    <label class="f">Tipo de documento<select name="tipo_doc" required><option value="DNI">DNI</option><option value="CE">Carné de extranjería</option><option value="Pasaporte">Pasaporte</option></select></label>
+    <label class="f ">Número de documento<input type="text" name="num_doc" required inputmode="numeric" maxlength="20"></label>
+    <label class="f full">Domicilio<input type="text" name="domicilio" required autocomplete="street-address" maxlength="200"></label>
+    <label class="f ">Teléfono<input type="tel" name="telefono" required autocomplete="tel" maxlength="20"></label>
+    <label class="f ">Correo electrónico<input type="email" name="correo" required autocomplete="email" maxlength="120"></label>
+  </div>
+  <label class="check"><input type="checkbox" name="menor" id="menor"> Soy menor de edad</label>
+  <div class="grid hidden" id="apoderado">
+    <label class="f full">Nombre del padre, madre o apoderado <small>(opcional)</small><input type="text" name="apod_nombre" maxlength="120"></label>
+    <label class="f ">Documento del padre, madre o apoderado <small>(opcional)</small><input type="text" name="apod_doc" maxlength="20"></label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>2. Servicio contratado</legend>
+  <div class="grid">
+    <label class="f">Tipo<input type="text" value="Servicio" readonly name="bien"></label>
+    <label class="f">Cuál<select name="servicio" required><option value="">Elige uno</option><option>Branding</option><option>Logotipo</option><option>Diseño web</option><option>Landing page</option><option>Web para startup</option><option>Plan mensual de hosting o mantenimiento</option><option>Otro</option></select></label>
+    <label class="f ">Monto reclamado en S/ <small>(opcional)</small><input type="number" name="monto" min="0" step="0.01" inputmode="decimal"></label>
+    <label class="f ">N.° de comprobante <small>(opcional)</small><input type="text" name="comprobante" maxlength="40"></label>
+    <label class="f full">Descripción del servicio<textarea name="desc_servicio" required maxlength="1500" style="min-height:90px"></textarea></label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>3. Detalle</legend>
+  <div class="radios" role="radiogroup" aria-label="Tipo">
+    <label><input type="radio" name="tipo" value="Reclamo" required> Reclamo</label>
+    <label><input type="radio" name="tipo" value="Queja"> Queja</label>
+  </div>
+  <p class="hint"><strong>Reclamo:</strong> disconformidad relacionada con los productos o servicios contratados. <strong>Queja:</strong> disconformidad no relacionada con los productos o servicios, o malestar respecto a la atención al público.</p>
+  <div class="grid" style="margin-top:16px">
+    <label class="f full">Detalle de lo ocurrido<textarea name="detalle" required maxlength="4000"></textarea></label>
+    <label class="f full">Qué solicitas (tu pedido)<textarea name="pedido" required maxlength="2000" style="min-height:90px"></textarea></label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>4. Respuesta</legend>
+  <p class="hint" style="margin:0 0 12px">¿Cómo quieres recibir la respuesta?</p>
+  <div class="radios">
+    <label><input type="radio" name="respuesta" value="Correo electrónico" required checked> Correo electrónico</label>
+    <label><input type="radio" name="respuesta" value="Carta a mi domicilio"> Carta a mi domicilio</label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>5. Confirmación</legend>
+  <label class="check"><input type="checkbox" name="veridico" required> Declaro que los datos consignados son verídicos.</label>
+  <label class="check"><input type="checkbox" name="datos" required> Acepto el tratamiento de mis datos personales para atender este reclamo, conforme a la Ley N.° 29733, Ley de Protección de Datos Personales.</label>
+</fieldset>
+
+<div class="card note">
+  <ul style="margin:0">
+    <li>La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</li>
+    <li>El proveedor deberá dar respuesta al reclamo o queja en un plazo no mayor a quince (15) días hábiles improrrogables.</li>
+  </ul>
+</div>
+
+<button class="btn" type="submit" id="enviar">Enviar hoja de reclamación →</button>
+<p class="err hidden" id="err" role="alert"></p>
+</form>
+
+<div class="card ok hidden" id="listo" tabindex="-1">
+  <p class="kicker" style="margin-bottom:6px">Hoja registrada</p>
+  <h2 style="margin:0 0 8px">Hoja N.° <span id="r-num"></span></h2>
+  <p id="r-msg" style="margin:0 0 16px"></p>
+  <div id="r-copia"></div>
+  <div class="noprint" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+    <button class="btn" type="button" id="imprimir">Descargar / imprimir copia</button>
+    <a class="btn ghost" id="r-mail" href="#">Enviar copia por correo</a>
+  </div>
+</div>
+
+</main>
+<footer>
+  <div class="row">
+    <span>© 2026 JEDX · Edwin Chirinos Diaz · RUC 10721502886</span>
+    <nav aria-label="Legal"><a href="terminos.html">Términos y condiciones</a><a href="terminos.html#datos">Privacidad</a><a href="libro-de-reclamaciones.html">Libro de Reclamaciones</a><a href="https://wa.me/51967226136" target="_blank" rel="noopener">WhatsApp</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('reclamo'), menor=document.getElementById('menor'), apod=document.getElementById('apoderado');
+  var err=document.getElementById('err'), btn=document.getElementById('enviar');
+  menor.addEventListener('change',function(){apod.classList.toggle('hidden',!menor.checked);apod.querySelectorAll('input').forEach(function(i){i.required=menor.checked;});});
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var LBL=[['nombre','Nombres y apellidos'],['tipo_doc','Tipo de documento'],['num_doc','N.° de documento'],['domicilio','Domicilio'],['telefono','Teléfono'],['correo','Correo'],['apod_nombre','Padre, madre o apoderado'],['apod_doc','Documento del apoderado'],['servicio','Servicio contratado'],['monto','Monto reclamado (S/)'],['comprobante','N.° de comprobante'],['desc_servicio','Descripción del servicio'],['tipo','Tipo'],['detalle','Detalle'],['pedido','Pedido'],['respuesta','Respuesta por']];
+  function datos(){var d={};new FormData(f).forEach(function(v,k){d[k]=typeof v==='string'?v.trim():v;});d.menor=menor.checked;d.veridico=!!f.veridico.checked;d.datos=!!f.datos.checked;return d;}
+  function copiaHTML(d){return '<div class="tbl"><table><tbody>'+LBL.filter(function(p){return d[p[0]];}).map(function(p){return '<tr><th style="width:38%">'+esc(p[1])+'</th><td style="white-space:pre-wrap">'+esc(d[p[0]])+'</td></tr>';}).join('')+'</tbody></table></div>';}
+  function copiaTXT(n,fe,d){return 'HOJA DE RECLAMACIÓN N.° '+n+'\nFecha: '+fe+'\nProveedor: Edwin Chirinos Diaz (JEDX) · RUC 10721502886\n\n'+LBL.filter(function(p){return d[p[0]];}).map(function(p){return p[1]+': '+d[p[0]];}).join('\n');}
+  function mostrar(n,fe,d,msg){
+    document.getElementById('h-num').textContent=n;document.getElementById('h-fecha').textContent=fe;
+    document.getElementById('r-num').textContent=n;document.getElementById('r-msg').textContent=msg;
+    document.getElementById('r-copia').innerHTML=copiaHTML(d);
+    document.getElementById('r-mail').href='mailto:jedx.agency@gmail.com?cc='+encodeURIComponent(d.correo||'')+'&subject='+encodeURIComponent('Hoja de reclamación N.° '+n)+'&body='+encodeURIComponent(copiaTXT(n,fe,d));
+    f.classList.add('hidden');var l=document.getElementById('listo');l.classList.remove('hidden');l.focus();l.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  document.getElementById('imprimir').addEventListener('click',function(){window.print();});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();err.classList.add('hidden');
+    if(!f.checkValidity()){var bad=f.querySelector(':invalid');err.textContent='Revisa este campo: '+((bad.closest('label')||{}).textContent||'campo obligatorio').replace(/\s+/g,' ').trim().slice(0,80);err.classList.remove('hidden');bad.focus();return;}
+    var d=datos();btn.disabled=true;btn.textContent='Enviando…';
+    fetch('/api/reclamo',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json().then(function(j){if(!r.ok)throw j;return j;});})
+      .then(function(j){mostrar(j.numero,j.fecha,d,j.correo_enviado?'Registramos tu hoja y enviamos una copia a '+d.correo+'. Te responderemos en un plazo máximo de 15 días hábiles.':'Registramos tu hoja. Guarda esta copia con el botón de abajo. Te responderemos en un plazo máximo de 15 días hábiles.');})
+      .catch(function(j){
+        btn.disabled=false;btn.textContent='Enviar hoja de reclamación →';
+        if(j&&j.error&&!j.fallback){err.textContent=j.error;err.classList.remove('hidden');return;}
+        var now=new Date(),fe=now.toLocaleDateString('es-PE')+' '+now.toLocaleTimeString('es-PE',{hour:'2-digit',minute:'2-digit'});
+        mostrar('PEND-'+now.getTime().toString().slice(-6),fe,d,'No pudimos registrar tu hoja automáticamente. Usa el botón «Enviar copia por correo» para enviárnosla a jedx.agency@gmail.com; te confirmaremos el número oficial.');
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
